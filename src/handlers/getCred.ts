@@ -11,9 +11,9 @@ const getCreds = async (req: Request, env: Env) => {
 
   if (!verified) return new Response(undefined, { status: 401 })
 
-  const decodedPayload = jwt.decode(cookie.token)
+  const data = jwt.decode(cookie.token) as any
 
-  return Response.json(decodedPayload, { status: 200 })
+  return Response.json({ user: data.payload?.user, iat: new Date(data.payload.iat).toTimeString() }, { status: 200 })
 }
 
 export default getCreds

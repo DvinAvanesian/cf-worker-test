@@ -26,3 +26,8 @@ jobs:
           apiToken: ${{ secrets.CLOUDFLARE_API_TOKEN }}
           command: deploy
           packageManager: bun
+        env:
+          USERNAME: ${{ secrets.USERNAME }}
+          PASSWORD: ${{ secrets.PASSWORD }}
+          JWT_SECRET: ${{ secrets.JWT_SECRET }}
+          API_VERSION: ${{ vars.API_VERSION }}

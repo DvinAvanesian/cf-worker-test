@@ -1,5 +1,5 @@
 {
-  "name": "cfworker",
+  "name": "cf-worker-test",
   "version": "0.0.0",
   "private": true,
   "scripts": {
